@@ -1,0 +1,36 @@
+#Subir Containers
+#sudo docker-compose up -d
+#Parar Containers
+#sudo docker-compose DOWN
+version: "3.3"
+services:
+  #MySQL
+  db:
+    image: mysql
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "33060:3306"
+    volumes:
+      - ../../database/mysql/data:/var/lib/mysql
+    restart: always
+  #PHP E APACHE2
+  web:
+    image: "php:7.4-apache"
+    container_name: php-container
+    restart: always
+    working_dir: /var/www
+    volumes:
+      - "../../:/var/www:rw"
+      - "../../public:/var/www/html:rw"
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - app-network
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
