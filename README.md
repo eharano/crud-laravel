@@ -1,4 +1,9 @@
 ## Laravel CRUD Docker
 
+composer install
 
-## Roadmap
+npm install
+
+```
+npm run prod
+```
