@@ -7,9 +7,12 @@ services:
   #MySQL
   db:
     image: mysql
-    container_name: mysql-container
+    container_name: crudcep
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: crudcep
+      MYSQL_USER: crudcep
+      MYSQL_PASSWORD: teste123
     ports:
       - "33060:3306"
     volumes:
