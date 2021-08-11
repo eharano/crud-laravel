@@ -146,12 +146,12 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="estado" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
+                            <label for="uf" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                             <div class="col-md-6">
-                                <input id="estado" type="text" class="form-control @error('estado') is-invalid @enderror" name="estado" value="{{ old('estado') }}" required autocomplete="estado">
+                                <input id="uf" type="text" class="form-control @error('uf') is-invalid @enderror" name="uf" value="{{ old('uf') }}" required autocomplete="uf">
 
-                                @error('estado')
+                                @error('uf')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
